@@ -191,7 +191,7 @@ class Forecaster:
         id: int,
         future_covariates: List = None,
     ):
-        """Fit RandomForest model to given individual series of data"""
+        """Fit ExtraTrees model to given individual series of data"""
         model = ExtraTreesRegressor(
             n_estimators=self.n_estimators,
             min_samples_leaf=self.min_samples_leaf,
@@ -321,7 +321,7 @@ def train_predictor_model(
     Returns:
         'Forecaster': The Forecaster model
     """
-   
+
     model = Forecaster(
         data_schema=data_schema,
         **hyperparameters,
